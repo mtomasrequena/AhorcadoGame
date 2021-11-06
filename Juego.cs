@@ -21,7 +21,7 @@ namespace AhorcadoGame
 
         public void mostrarReglas()
         {
-            Console.WriteLine("Reglas y cosas");
+            Console.WriteLine("Reglas y cosas varias");
         }
 
         public void asignarPalabra()
