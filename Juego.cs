@@ -14,11 +14,7 @@ namespace AhorcadoGame
         public Juego( Jugador jugador )
         {
             this.jugador = jugador;
-
-            Console.Clear();
-            Console.WriteLine(letraVerdadera.ToString());
-
-            mostrarEnigma();
+            jugar();
         }
 
         public void jugar()
@@ -34,9 +30,10 @@ namespace AhorcadoGame
                 while (comprobarLetra(letra) == false)
                 {
                     Console.WriteLine("\nNo se ha ingresado una letra\n");
+                    Console.WriteLine("\nIngrese letra: \n");
+                    letra = char.Parse(Console.ReadLine());
                 }
                 compararLetra(letra);
-                   
             }
         }
 
@@ -50,6 +47,7 @@ namespace AhorcadoGame
                     letraVerdadera = true;
                 }
             }
+            mostrarEnigma();
         }
 
         private void mostrarEnigma()
@@ -91,7 +89,8 @@ namespace AhorcadoGame
 
         public bool comprobarLetra(char letra)
         {
-            return letra > 0;
+            string numeros = "0 1 2 3 4 5 6 7 8 9";
+            return !numeros.Contains(letra);
         }
     }
 }
