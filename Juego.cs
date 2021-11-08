@@ -15,16 +15,6 @@ namespace AhorcadoGame
         {
             this.jugador = jugador;
 
-            asignarPalabra();
-
-            convertirGuion();
-
-            mostrarEnigma();
-
-            Console.WriteLine("Ingrese letra: ");
-            char letra = char.Parse(Console.ReadLine());
-
-            compararLetra(letra);
             Console.Clear();
             Console.WriteLine(letraVerdadera.ToString());
 
@@ -33,9 +23,20 @@ namespace AhorcadoGame
 
         public void jugar()
         {
-            while ( jugador.tieneVidas() )
+            asignarPalabra();
+            convertirGuion();
+
+            while ( jugador.tieneVidas() && comprobarEnigma() )
             {
-                
+                mostrarEnigma();
+                Console.WriteLine("\nIngrese letra: \n");
+                char letra = char.Parse(Console.ReadLine());
+                while (comprobarLetra(letra) == false)
+                {
+                    Console.WriteLine("\nNo se ha ingresado una letra\n");
+                }
+                compararLetra(letra);
+                   
             }
         }
 
@@ -72,6 +73,25 @@ namespace AhorcadoGame
             enigma = palabra.ToCharArray();
             for ( int i = 0; i < enigma.Length; i++ )
                 enigma[i] = '_';
+        }
+
+        public bool comprobarEnigma()
+        {
+            bool estadoDelEnigma = false;
+
+            for (int i = 0; i < palabrachar.Length; i++)
+            {
+                if ( enigma[i] != palabrachar[i] )
+                {
+                    estadoDelEnigma = true;
+                }
+            }
+            return estadoDelEnigma;
+        }
+
+        public bool comprobarLetra(char letra)
+        {
+            return letra > 0;
         }
     }
 }
