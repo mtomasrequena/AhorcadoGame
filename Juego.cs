@@ -8,12 +8,6 @@ namespace AhorcadoGame
     {
         private Jugador jugador;
         private string palabra;
-        /*private Jugador jugador;
-
-        public Juego(Jugador jugador)
-        {
-            this.jugador = jugador;
-        }*/
 
         char[] enigma, palabrachar;
         bool letraVerdadera=false;
@@ -26,11 +20,12 @@ namespace AhorcadoGame
                 enigma[i] = '_';
         }
 
-        public Juego(Introduccion player, Jugador jugador)
+        public Juego( Jugador jugador )
         {
             this.jugador = jugador;
 
-            Console.WriteLine(player.getNombre());
+            Console.WriteLine(jugador.getNombre());
+            Console.ReadKey();
 
             asignarPalabra();
 
