@@ -6,8 +6,7 @@ namespace AhorcadoGame
 {
     class Diccionario
     {
-        private string[] diccionario = { "Marcos", "Leandro", "Jerkan", "ElizabethRiendo", "Matias", "cebra", "durazno", "sombrero" , "culo","almeja"};
-        //Sugerencia de palabras nuevas= comidassssss
+        private string[] diccionario = { "Marcos", "Leandro", "Jerkan", "ElizabethRiendo", "Matias", "cebra", "durazno", "sombrero" , "culo","almeja", "prueba", "pull"};
         public string generarPalabra()
         {
             Random posicionRandom = new Random();
