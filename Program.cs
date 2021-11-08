@@ -6,12 +6,11 @@ namespace AhorcadoGame
     {
         static void Main(string[] args)
         {
-            /*Introduccion nuevaIntro = */
-            //new Introduccion();
-            /*string name = nuevaIntro.getNombre();
+            Introduccion j1 = new Introduccion();
             
-            Jugador jugador = new Jugador(name);*/
-            new Juego();
+            Jugador jugador = new Jugador(j1.getNombre()); // new Jugador(Jugador player)
+
+            new Juego(j1,jugador);
         }
     }
 }

@@ -6,6 +6,7 @@ namespace AhorcadoGame
 {
     class Juego
     {
+        private Jugador jugador;
         private string palabra;
         /*private Jugador jugador;
 
@@ -25,8 +26,12 @@ namespace AhorcadoGame
                 enigma[i] = '_';
         }
 
-        public Juego()
+        public Juego(Introduccion player, Jugador jugador)
         {
+            this.jugador = jugador;
+
+            Console.WriteLine(player.getNombre());
+
             asignarPalabra();
 
             convertirGuion();
