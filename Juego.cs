@@ -13,6 +13,14 @@ namespace AhorcadoGame
         {
             this.jugador = jugador;
         }*/
+        
+        private void convertirGuion()
+        {
+            palabrachar = palabra.ToLower().ToCharArray();
+            enigma = palabra.ToCharArray();
+            for (int i = 0; i < enigma.Length; i++)
+                enigma[i] = '_';
+        }
 
         public void jugar()
         {
