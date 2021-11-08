@@ -11,9 +11,9 @@ namespace AhorcadoGame
 
         // Sistema de puntuacion?
 
-        public Jugador(string name)
+        public Jugador(string nombre)
         {
-            this.nombre = name;
+            this.nombre = nombre;
         }
 
         public string getNombre()
