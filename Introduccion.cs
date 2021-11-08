@@ -6,27 +6,31 @@ namespace AhorcadoGame
 {
     class Introduccion
     {
-        /*private string nombre;*/
+        private string nombre;
 
         public Introduccion()
         {
             Console.WriteLine("Ingrese su nombre");
-            string nombre = Console.ReadLine();
-
-            /*this.nombre = nombre;*/
+            this.nombre = Console.ReadLine();
 
             Console.Clear();
 
-            Console.WriteLine("Bienvenido {0}", nombre);
+            Console.WriteLine("Bienvenido {0}", this.nombre);
 
             // si quieren dejamos aca
 
-            new Jugador(nombre); // Inconveniente, no se le puede asignar a un objeto jugador en concreto, nos quedamos sin referencia de objeto.
+            
         }
 
-        /*public string getNombre()
+        public string getNombre()
         {
             return this.nombre;
-        }*/
+        }
+
+        public Introduccion GetIntroduccion()
+        {
+            Introduccion j1 = new Introduccion();
+            return j1;
+        }
     }
 }
