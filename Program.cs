@@ -7,10 +7,11 @@ namespace AhorcadoGame
         static void Main(string[] args)
         {
             /*Introduccion nuevaIntro = */
-            new Introduccion();
+            //new Introduccion();
             /*string name = nuevaIntro.getNombre();
             
             Jugador jugador = new Jugador(name);*/
+            new Juego();
         }
     }
 }
