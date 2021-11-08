@@ -13,6 +13,9 @@ namespace AhorcadoGame
         {
             this.jugador = jugador;
         }*/
+
+        char[] enigma, palabrachar;
+        bool letraVerdadera=false;
         
         private void convertirGuion()
         {
@@ -22,14 +25,43 @@ namespace AhorcadoGame
                 enigma[i] = '_';
         }
 
-        public void jugar()
+        public Juego()
         {
             asignarPalabra();
+
+            convertirGuion();
+
+            mostrarEnigma();
+
+            Console.WriteLine("Ingrese letra: ");
+            char letra = char.Parse(Console.ReadLine());
+
+            compararLetra(letra);
+            Console.Clear();
+            Console.WriteLine(letraVerdadera.ToString());
+
+            mostrarEnigma();
         }
 
-        public void mostrarReglas()
+        private void compararLetra(char letra)
         {
-            Console.WriteLine("Reglas y cosas varias");
+            for(int i = 0; i < palabrachar.Length; i++)
+            {
+                if(palabrachar[i]==letra)
+                {
+                    enigma[i] = palabrachar[i];
+                    letraVerdadera = true;
+                }
+            }
+        }
+
+        private void mostrarEnigma()
+        {
+            Console.WriteLine();
+            for(int i=0;i<enigma.Length;i++)
+            {
+                Console.Write(enigma[i].ToString() + " ");
+            }
         }
 
         public void asignarPalabra()
