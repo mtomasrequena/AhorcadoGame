@@ -25,12 +25,6 @@ namespace AhorcadoGame
             return this.nombre;
         }
 
-        public Introduccion GetIntroduccion()
-        {
-            Introduccion j1 = new Introduccion();
-            return j1;
-        }
-
         private void mostrarReglas()
         {
             Console.WriteLine("REGLAS: \n");
