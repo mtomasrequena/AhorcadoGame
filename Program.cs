@@ -8,9 +8,9 @@ namespace AhorcadoGame
         {
             Introduccion introduccion = new Introduccion();
 
-            Jugador jugador = new Jugador(introduccion.getNombre());
+            Jugador jugador1 = new Jugador(introduccion.getNombre());
 
-            new Juego(jugador);
+            new Juego(jugador1);
         }
     }
 }
