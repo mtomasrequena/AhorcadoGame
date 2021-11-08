@@ -66,8 +66,8 @@ namespace AhorcadoGame
 
         public void asignarPalabra()
         {
-            Diccionario palabraElegida = new Diccionario();
-            this.palabra = palabraElegida.generarPalabra();
+            Diccionario diccionario = new Diccionario();
+            this.palabra = diccionario.generarPalabra();
         }
     }
 }
