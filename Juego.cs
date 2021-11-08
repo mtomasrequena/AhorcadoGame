@@ -8,18 +8,9 @@ namespace AhorcadoGame
     {
         private Jugador jugador;
         private string palabra;
-
         char[] enigma, palabrachar;
         bool letraVerdadera=false;
         
-        private void convertirGuion()
-        {
-            palabrachar = palabra.ToLower().ToCharArray();
-            enigma = palabra.ToCharArray();
-            for (int i = 0; i < enigma.Length; i++)
-                enigma[i] = '_';
-        }
-
         public Juego( Jugador jugador )
         {
             this.jugador = jugador;
@@ -68,6 +59,14 @@ namespace AhorcadoGame
         {
             Diccionario diccionario = new Diccionario();
             this.palabra = diccionario.generarPalabra();
+        }
+
+        private void convertirGuion()
+        {
+            palabrachar = palabra.ToLower().ToCharArray();
+            enigma = palabra.ToCharArray();
+            for (int i = 0; i < enigma.Length; i++)
+                enigma[i] = '_';
         }
     }
 }
