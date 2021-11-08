@@ -6,7 +6,7 @@ namespace AhorcadoGame
 {
     class Diccionario
     {
-        private string[] diccionario = { "Marcos", "Leandro", "Jerkan", "ElizabethRiendo", "Matias", "cebra", "durazno", "sombrero", "Pato", "almeja", "HOLA","chau","harta","odioesto"};
+        private string[] diccionario = { "Marcos", "Leandro", "Jerkan", "ElizabethRiendo", "Matias", "cebra", "durazno", "sombrero", "Pato", "almeja", "HOLA","chau","harta"};
 
         public string generarPalabra()
         {
