@@ -10,6 +10,7 @@ namespace AhorcadoGame
         private string palabra;
         char[] enigma, palabrachar;
         bool letraVerdadera=false;
+        private StringBuilder registro = new StringBuilder();
         
         public Juego( Jugador jugador )
         {
@@ -22,7 +23,7 @@ namespace AhorcadoGame
             asignarPalabra();
             convertirGuion();
 
-            while ( jugador.tieneVidas() && comprobarEnigma() )
+            while (jugador.tieneVidas() && comprobarEnigma())
             {
                 mostrarEnigma();
                 Console.WriteLine("\nIngrese letra: \n");
@@ -34,11 +35,24 @@ namespace AhorcadoGame
                     letra = char.Parse(Console.ReadLine());
                 }
                 compararLetra(letra);
+
+                Console.Clear();
+
+                if ( letraVerdadera == false )
+                {
+                    Console.WriteLine("\nle pifiaste FORRO\n");
+                    jugador.quitarVidas();
+                    jugador.mostrarVidas();
+                }
+
+                registrarLetra(letra);
             }
+            mostrarEnigma();
         }
 
         private void compararLetra(char letra)
         {
+            letraVerdadera = false;
             for(int i = 0; i < palabrachar.Length; i++)
             {
                 if(palabrachar[i]==letra)
@@ -47,7 +61,6 @@ namespace AhorcadoGame
                     letraVerdadera = true;
                 }
             }
-            mostrarEnigma();
         }
 
         private void mostrarEnigma()
@@ -91,6 +104,13 @@ namespace AhorcadoGame
         {
             string numeros = "0 1 2 3 4 5 6 7 8 9";
             return !numeros.Contains(letra);
+        }
+
+        public void registrarLetra(char letra)
+        {
+            registro.Append(letra.ToString() + " ");
+
+            Console.WriteLine(registro.ToString());
         }
     }
 }
