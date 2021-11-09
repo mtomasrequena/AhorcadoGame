@@ -27,13 +27,14 @@ namespace AhorcadoGame
             {
                 mostrarEnigma();
                 Console.WriteLine("\nIngrese letra: \n");
-                char letra = char.Parse(Console.ReadLine());
-                while (comprobarLetra(letra) == false)
+                string letraingresada = Console.ReadLine();
+                while (comprobarLetra(letraingresada) == false)
                 {
                     Console.WriteLine("\nNo se ha ingresado una letra\n");
                     Console.WriteLine("\nIngrese letra: \n");
-                    letra = char.Parse(Console.ReadLine());
+                    letraingresada = Console.ReadLine();
                 }
+                char letra = char.Parse(letraingresada);
                 compararLetra(letra);
 
                 Console.Clear();
@@ -100,10 +101,13 @@ namespace AhorcadoGame
             return estadoDelEnigma;
         }
 
-        public bool comprobarLetra(char letra)
+        public bool comprobarLetra(string letraingresada)
         {
             string numeros = "0 1 2 3 4 5 6 7 8 9";
-            return !numeros.Contains(letra);
+            if (letraingresada.Length > 1 || numeros.Contains(letraingresada))
+                return false;
+            else
+                return true;
         }
 
         public void registrarLetra(char letra)
