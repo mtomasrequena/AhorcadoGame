@@ -49,6 +49,23 @@ namespace AhorcadoGame
                 registrarLetra(letra);
             }
             mostrarEnigma();
+            final();
+        }
+
+        private void final()
+        {
+            Console.Clear();
+            
+            if (jugador.tieneVidas())
+            {
+                Console.WriteLine("\nfelicidades {0}, no has sido colgado!\n", jugador.getNombre());
+            }
+            else
+            {
+                Console.WriteLine("\n{0} has sido colgado!\n", jugador.getNombre());
+                Console.WriteLine("\nLa palabra era: {0}", this.palabra);
+            }
+            Console.ReadKey();
         }
 
         private void compararLetra(char letra)
