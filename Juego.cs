@@ -41,7 +41,7 @@ namespace AhorcadoGame
 
                 if ( letraVerdadera == false )
                 {
-                    Console.WriteLine("\nle pifiaste FORRO\n");
+                    Console.WriteLine("\nLe erraste {0}\n", jugador.getNombre());
                     jugador.quitarVidas();
                     jugador.mostrarVidas();
                 }
