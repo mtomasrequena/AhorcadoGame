@@ -8,8 +8,8 @@ namespace AhorcadoGame
     {
         private Jugador jugador;
         private string palabra;
-        char[] enigma, palabrachar;
-        bool letraVerdadera = false;
+        private char[] enigma, palabrachar;
+        private bool letraVerdadera = false;
         private StringBuilder registro = new StringBuilder();
         
         public Juego( Jugador jugador )
@@ -18,7 +18,7 @@ namespace AhorcadoGame
             jugar();
         }
 
-        public void jugar()
+        private void jugar()
         {
             asignarPalabra();
             convertirGuion();
@@ -94,7 +94,7 @@ namespace AhorcadoGame
             }
         }
 
-        public void asignarPalabra()
+        private void asignarPalabra()
         {
             Diccionario diccionario = new Diccionario();
             this.palabra = diccionario.generarPalabra();
@@ -108,7 +108,7 @@ namespace AhorcadoGame
                 enigma[i] = '_';
         }
 
-        public bool comprobarEnigma()
+        private bool comprobarEnigma()
         {
             bool estadoDelEnigma = false;
 
@@ -122,7 +122,7 @@ namespace AhorcadoGame
             return estadoDelEnigma;
         }
 
-        public bool comprobarLetra(string letraingresada)
+        private bool comprobarLetra(string letraingresada)
         {
             string numeros = "0 1 2 3 4 5 6 7 8 9";
             if (letraingresada.Length > 1 || numeros.Contains(letraingresada))
@@ -131,7 +131,7 @@ namespace AhorcadoGame
                 return true;
         }
 
-        public void registrarLetra(char letra)
+        private void registrarLetra(char letra)
         {
             registro.Append(letra.ToString() + " ");
 
