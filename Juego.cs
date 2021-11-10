@@ -44,7 +44,6 @@ namespace AhorcadoGame
                 }
                 registrarLetra(letra);
             }
-            mostrarEnigma();
             final();
         }
 
