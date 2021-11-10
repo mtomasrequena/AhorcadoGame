@@ -18,6 +18,11 @@ namespace AhorcadoGame
             Console.WriteLine("\nBienvenido {0}\n", this.nombre);
 
             mostrarReglas();
+
+            Console.WriteLine("\nPrecione cualquier tecla para empezar a jugar.");
+            Console.ReadKey();
+
+            Console.Clear();
         }
 
         public string getNombre()
