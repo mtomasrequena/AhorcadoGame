@@ -15,41 +15,33 @@ namespace AhorcadoGame
         public Juego( Jugador jugador )
         {
             this.jugador = jugador;
+            asignarPalabra();
+            convertirGuion();
             jugar();
         }
 
         private void jugar()
         {
-            asignarPalabra();
-            convertirGuion();
-
             while (jugador.tieneVidas() && comprobarEnigma())
             {
                 mostrarEnigma();
-
                 Console.WriteLine("\n\nIngrese letra: ");
                 string letraingresada = Console.ReadLine();
-
                 while (comprobarLetra(letraingresada) == false)
                 {
                     Console.WriteLine("\nNo se ha ingresado una letra\n");
                     Console.WriteLine("\nIngrese letra: \n");
                     letraingresada = Console.ReadLine();
                 }
-
                 char letra = char.Parse(letraingresada);
-
                 compararLetra(letra);
-
                 Console.Clear();
-
                 if ( letraVerdadera == false )
                 {
                     Console.WriteLine("Le erraste {0}\n", jugador.getNombre());
                     jugador.quitarVidas();
                     jugador.mostrarVidas();
                 }
-
                 registrarLetra(letra);
             }
             mostrarEnigma();
@@ -59,7 +51,6 @@ namespace AhorcadoGame
         private void final()
         {
             Console.Clear();
-            
             if (jugador.tieneVidas())
             {
                 Console.WriteLine("\nFelicidades {0}, no has sido colgado!\n", jugador.getNombre());
@@ -111,7 +102,6 @@ namespace AhorcadoGame
         private bool comprobarEnigma()
         {
             bool estadoDelEnigma = false;
-
             for (int i = 0; i < palabrachar.Length; i++)
             {
                 if ( enigma[i] != palabrachar[i] )
@@ -134,7 +124,6 @@ namespace AhorcadoGame
         private void registrarLetra(char letra)
         {
             registro.Append(letra.ToString() + " ");
-
             Console.WriteLine("Letras ingresadas: " + registro.ToString() + "\n");
         }
     }
