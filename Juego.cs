@@ -26,7 +26,7 @@ namespace AhorcadoGame
             while (jugador.tieneVidas() && comprobarEnigma())
             {
                 mostrarEnigma();
-                Console.WriteLine("\nIngrese letra: \n");
+                Console.WriteLine("\n\nIngrese letra: ");
                 string letraingresada = Console.ReadLine();
                 while (comprobarLetra(letraingresada) == false)
                 {
@@ -58,7 +58,7 @@ namespace AhorcadoGame
             
             if (jugador.tieneVidas())
             {
-                Console.WriteLine("\nfelicidades {0}, no has sido colgado!\n", jugador.getNombre());
+                Console.WriteLine("\nFelicidades {0}, no has sido colgado!\n", jugador.getNombre());
             }
             else
             {
@@ -131,7 +131,7 @@ namespace AhorcadoGame
         {
             registro.Append(letra.ToString() + " ");
 
-            Console.WriteLine(registro.ToString());
+            Console.WriteLine("Letras ingresadas: " + registro.ToString() + "\n");
         }
     }
 }
