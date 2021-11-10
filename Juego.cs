@@ -9,7 +9,7 @@ namespace AhorcadoGame
         private Jugador jugador;
         private string palabra;
         char[] enigma, palabrachar;
-        bool letraVerdadera=false;
+        bool letraVerdadera = false;
         private StringBuilder registro = new StringBuilder();
         
         public Juego( Jugador jugador )
@@ -26,22 +26,26 @@ namespace AhorcadoGame
             while (jugador.tieneVidas() && comprobarEnigma())
             {
                 mostrarEnigma();
+
                 Console.WriteLine("\n\nIngrese letra: ");
                 string letraingresada = Console.ReadLine();
+
                 while (comprobarLetra(letraingresada) == false)
                 {
                     Console.WriteLine("\nNo se ha ingresado una letra\n");
                     Console.WriteLine("\nIngrese letra: \n");
                     letraingresada = Console.ReadLine();
                 }
+
                 char letra = char.Parse(letraingresada);
+
                 compararLetra(letra);
 
                 Console.Clear();
 
                 if ( letraVerdadera == false )
                 {
-                    Console.WriteLine("\nLe erraste {0}\n", jugador.getNombre());
+                    Console.WriteLine("Le erraste {0}\n", jugador.getNombre());
                     jugador.quitarVidas();
                     jugador.mostrarVidas();
                 }

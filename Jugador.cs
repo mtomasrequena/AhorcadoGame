@@ -28,7 +28,7 @@ namespace AhorcadoGame
 
         public void mostrarVidas()
         {
-            Console.WriteLine("Te quedan {0} vidas", this.vidas);
+            Console.WriteLine("Te quedan {0} vidas\n", this.vidas);
         }
 
         public bool tieneVidas()
